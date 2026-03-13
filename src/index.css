@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7C5DFA; /* Vibrant Pastel Purple */
+  --color-primary-dark: #5837D0;
+  --color-background-light: #F0F4F8; /* Soft Blue-Grey */
+  --color-background-dark: #1E1E2E;
+  --color-surface: #FFFFFF;
+  --color-text-main: #2D3436;
+  --color-text-muted: #636E72;
+  --color-accent-mint: #A2D9CE; /* Pastel Mint */
+  --color-accent-peach: #FFD1BA; /* Pastel Peach */
+  --color-accent-lavender: #D7BDE2; /* Pastel Lavender */
+  --color-accent-yellow: #FCF3CF; /* Pastel Yellow */
+
+  --font-display: "Manrope", sans-serif;
+  --font-heading: "Syne", sans-serif;
+  --font-body: "Outfit", sans-serif;
+
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-card: 24px;
+
+  --shadow-diffuse: 0 15px 35px rgba(124, 93, 250, 0.1);
+  --shadow-hover: 0 25px 50px rgba(124, 93, 250, 0.15);
+}
+
+@layer base {
+  body {
+    @apply bg-background-light text-text-main font-display antialiased;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-diffuse;
+  }
+  
+  .pastel-card {
+    @apply bg-surface rounded-card p-8 shadow-diffuse hover:shadow-hover transition-all duration-500 border border-white/50;
+  }
+
+  .badge-pop {
+    @apply inline-block py-1 px-4 rounded-full font-bold text-xs tracking-wider uppercase;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F4F8;
+}
+::-webkit-scrollbar-thumb {
+  background: #D7BDE2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7C5DFA;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
